@@ -1,6 +1,7 @@
 // Imports
 const express = require('express');
 
+const api = require('./routes/index.js');
 const apiRoutes = require('./routes/apiRoutes');
 const htmlRoutes = require('./routes/htmlRoutes');
 
@@ -17,8 +18,8 @@ app.get('/', (req, res) =>
 // Middleware
 app.use(express.static("public"));
 app.use(express.json())
-app.use('/api', apiRoutes);
-app.use('/', htmlRoutes);
+app.use('/api', api);
+app.use('/htmlRoutes', htmlRoutes);
 app.use(express.urlencoded({ extended: true }));
 
 
