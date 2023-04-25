@@ -10,12 +10,16 @@ const app = express();
 // Loclhost Port
 const PORT = process.env.PORT || 3001;
 
-app.post('/', (req, res) => res.send('Visit http://localhost:3001/api'));
+app.get('/', (req, res) =>
+  res.sendFile(path.join(__dirname, '/public/index.html'))
+);
 
 // Middleware
 app.use(express.static("public"));
 app.use(express.json())
-app.use
+app.use('/api', apiRoutes);
+app.use('/', htmlRoutes);
+app.use(express.urlencoded({ extended: true }));
 
 
 // Port Listening
