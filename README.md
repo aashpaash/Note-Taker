@@ -34,6 +34,7 @@ THEN I am presented with empty fields to enter a new note title and the note’s
 Heroku: 
 Local deployment: node server.js
     Port 3001
+Deplyment: https://aashpaash.github.io/Note-Taker/
 
 Repo link: https://github.com/aashpaash/Note-Taker
 
