@@ -24,8 +24,8 @@ Router.post("/notes", (req, res) => {
 Router.delete("/notes", (req, res) => {
     saveNotes
         .deleteNote(req.body.params.id)
-        .then((( => res.json({ alert: "Successfully deleted"}))))
-        .catch(err => {request.statusCode(500).json(err)});
+        .then((() => res.json({ alert: "Successfully deleted"}))
+        .catch(err => {request.statusCode(500).json(err)}));
 })
 
 
