@@ -1,6 +1,5 @@
 # Note Taker Starter Code
 
-
 ## Table of Contents
 - [Description](#Description)
 - [Installation](#Installation)
@@ -33,7 +32,8 @@ THEN I am presented with empty fields to enter a new note title and the note’s
 
 # Installation <br/>
 Heroku: 
-Local deployment:
+Local deployment: node server.js
+    Port 3001
 
 Repo link: https://github.com/aashpaash/Note-Taker
 

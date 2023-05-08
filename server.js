@@ -2,13 +2,13 @@
 const express = require('express');
 
 const api = require('./routes/index.js');
-const apiRoutes = require('./routes/apiRoutes');
-const htmlRoutes = require('./routes/htmlRoutes');
+const api = require('./routes/api');
+const html = require('./routes/html');
 
 // Initialize Express
 const app = express();
 
-// Loclhost Port
+// Localhost Port
 const PORT = process.env.PORT || 3001;
 
 app.get('/', (req, res) =>
@@ -19,7 +19,7 @@ app.get('/', (req, res) =>
 app.use(express.static("public"));
 app.use(express.json())
 app.use('/api', api);
-app.use('/htmlRoutes', htmlRoutes);
+app.use('/html', html);
 app.use(express.urlencoded({ extended: true }));
 
 
