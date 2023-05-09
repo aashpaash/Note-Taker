@@ -1,4 +1,4 @@
-const apiRoutes = require('express').Router();
+const Router = require('express').Router();
 const { Router, request } = require('express');
 const saveNotes = require('../db/notes.js');
 
@@ -31,4 +31,4 @@ Router.delete("/notes", (req, res) => {
 
 
 
-exports.module = apiRoutes
+module.exports = Router;
