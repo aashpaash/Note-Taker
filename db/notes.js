@@ -17,15 +17,39 @@ class saveNotes {
         ;}
     }
     write(note) {
-        return makeNote('db/db.json', JSON.stringify(note));
+        return makeNote(('db/db.json', JSON.stringify(note)));
     }
-    getNotes() {
+    getNotes(note) {
         return this.read().then((notes) => {
         return [].concat(notes.parse(JSON));
         });
     }
     addNote(note) {
-        let note = {title, text}
-        const newNote = {title, text, id:()}
-}
+        const {title, text}  = note;
 
+        const newNote = {title, text, id:uuidv4()};
+
+        return this.getNotes() 
+        .then(note => {
+            note.push(newNote);
+            return note;
+        })
+        .then(note => {
+            (updateNote => this.write(note, updateNote))
+        }
+        .then(() => newNote)
+
+    }
+    deleteNote(id) {
+        return this.getNotes()
+        .then(note => { return this.getNotes()
+            .then (note => note.filter(note => note.id === id))
+        })
+        .then(filteredNotes => this.write(filteredNotes, filteredNotes));
+
+    }
+
+
+};
+
+module.exports = new saveNotes();
